@@ -78,11 +78,11 @@ A modern web-based application to manage and track daily skincare routines effic
 
 Make sure you have:
 
-* **Node.js** 18+
+* **React.js** 18+
 * **npm**
 * **PHP** 8+
 * **MySQL**
-* **XAMPP / Laragon** (for backend)
+* **XAMPP** (for backend)
 
 ---
 
@@ -91,8 +91,8 @@ Make sure you have:
 ### 1️⃣ Clone Repository
 
 ```bash
-git clone https://github.com/yourusername/skincare-routine.git
-cd skincare-routine
+git clone https://github.com/itsnisa/skincare-routine.git
+cd ujian_PWEB
 ```
 
 ---
@@ -123,7 +123,8 @@ htdocs/skincare_api
 2. Create database:
 
 ```sql
-CREATE DATABASE skincare_db;
+CREATE DATABASE skincare_routine_db;
+USE skincare_routine_db;
 ```
 
 3. Import table:
@@ -131,10 +132,10 @@ CREATE DATABASE skincare_db;
 ```sql
 CREATE TABLE routines (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  product_name VARCHAR(100),
-  step VARCHAR(50),
-  time_of_day VARCHAR(10),
-  frequency VARCHAR(50),
+  product_name VARCHAR(120) NOT NULL,
+  step ENUM('Cleanser','Toner','Serum','Moisturizer','Sunscreen','Exfoliant','Mask','Other') NOT NULL DEFAULT 'Other',
+  time_of_day ENUM('AM','PM') NOT NULL DEFAULT 'AM',
+  frequency ENUM('Daily','2-3x/week','Weekly','As Needed') NOT NULL DEFAULT 'Daily',
   notes TEXT,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
@@ -144,9 +145,9 @@ CREATE TABLE routines (
 
 ```php
 $host = "localhost";
-$dbname = "skincare_db";
-$username = "root";
-$password = "";
+$user = "root";
+$pass = "";
+$db   = "skincare_routine_db";
 ```
 
 Backend endpoint:
@@ -172,6 +173,7 @@ skincare-routine/
 │   │   ├── Header.jsx
 │   │   ├── Sidebar.jsx
 │   │   ├── RoutineList.jsx
+|   |   ├── RoutineForm.jsx
 │   │   └── StatCards.jsx
 │   │
 │   ├── pages/
@@ -228,7 +230,7 @@ skincare-routine/
 
 ### Backend not connected?
 
-* Pastikan XAMPP/Laragon aktif
+* Pastikan XAMPP
 * Cek URL API di `routineApi.js`
 * Pastikan database sudah dibuat
 
@@ -263,9 +265,9 @@ This project is licensed under the **MIT License**.
 
 ## 👨‍💻 Author
 
-**Skincare Routine App**
-
-Developed for academic and learning purposes.
+- **Annisa Ismidabilah**
+- **Cristofori Niko Fedrik Sagala**
+- **Muhammad Daffa ' Alfiannoor**
 
 ---
 
