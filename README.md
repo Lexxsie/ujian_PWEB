@@ -184,7 +184,6 @@ skincare-routine/
 │   └── index.css
 │
 ├── index.html
-├── tailwind.config.js
 ├── vite.config.js
 ├── package.json
 └── README.md
@@ -280,11 +279,3 @@ Made with 💙 using React, Tailwind, PHP & MySQL
 </div>
 
 ---
-
-Kalau kamu mau:
-
-* versi **bahasa Indonesia penuh**
-* README **khusus laporan kampus**
-* atau disesuaikan dengan **nama & NPM kamu**
-
-bilang aja, aku rapikan ✨
